@@ -1,0 +1,16 @@
+fastapi
+uvicorn[standard]
+pydantic
+python-dotenv
+requests
+qdrant-client
+pypdf
+langchain   # pin to a modern langchain; adjust if needed
+langchain-openai
+langchain-text-splitters
+langchain-community
+langchain-qdrant
+langchain-huggingface
+pydantic-settings
+python-multipart
+sentence-transformers
