@@ -8,6 +8,7 @@ from config import settings
 import uuid
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_openai import OpenAIEmbeddings
 
 
 class RAGChain:
@@ -15,8 +16,12 @@ class RAGChain:
     def __init__(self):
 
         self.huggingface_client = HuggingFaceClient()
+
+        self.embedding = OpenAIEmbeddings(
+            model=settings.HF_EMBED_MODEL
+        )
         
-        self.embedding = self.huggingface_client.get_embedding()
+        # self.embedding = self.huggingface_client.get_embedding()
 
         self.vector_store = VectorStore(self.embedding)
 

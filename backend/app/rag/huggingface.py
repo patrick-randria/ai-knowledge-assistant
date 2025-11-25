@@ -3,23 +3,21 @@ import os
 
 import requests
 from config import settings
-from langchain_huggingface.embeddings import HuggingFaceEmbeddings
-from huggingface_hub import InferenceClient
-import asyncio
+# from langchain_huggingface.embeddings import HuggingFaceEmbeddings
+# from huggingface_hub import InferenceClient
 
 
 class HuggingFaceClient:
 
     def __init__(self):
-        self.inference_client = InferenceClient(token=settings.HF_API_TOKEN)
+        # self.inference_client = InferenceClient(token=settings.HF_API_TOKEN)
 
-        self.embedding = HuggingFaceEmbeddings(
-            model_name=settings.HF_EMBED_MODEL,
-            encode_kwargs={"normalize_embeddings" : True}
-        )
-    
-    def get_embedding(self):
-        return self.embedding
+        # self.embedding = HuggingFaceEmbeddings(
+        #     model_name=settings.HF_EMBED_MODEL,
+        #     encode_kwargs={"normalize_embeddings" : True}
+        # )
+        pass
+        
     
 
     def generate(self, question: str, retrieved_docs: list):

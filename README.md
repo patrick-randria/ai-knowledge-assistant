@@ -56,6 +56,7 @@ with the following content:
 
 ```
 HF_API_TOKEN=your_huggingface_key
+OPENAI_API_KEY=your_open_ai_key
 HF_MODEL=openai/gpt-oss-120b:fastest
 HF_EMBED_MODEL=intfloat/e5-small
 QDRANT_HOST=qdrant
@@ -88,30 +89,6 @@ Services:
 4. Embeddings are stored in Qdrant  
 5. A query triggers a retrieval + synthesis pipeline using LangChain  
 
-
-## Recommended Models
-
-LLMs:
-- microsoft/Phi-3-mini-4k-instruct
-- google/gemma-2b-it
-- mistralai/Mistral-7B-Instruct-v0.3
-
-Embeddings:
-- intfloat/e5-small (384 dim)  
-- intfloat/e5-base (768 dim)  
-- sentence-transformers/all-MiniLM-L6-v2 (384 dim)
-
-
-## Deployment Notes
-
-A low-cost VPS (2GB RAM minimum recommended) is sufficient for this stack, since all LLM inference happens through Hugging Face’s hosted API.
-
-To expose the application publicly:
-- serve the React build through Nginx  
-- reverse-proxy the FastAPI backend  
-- use Certbot for HTTPS  
-
----
 
 ## Author
 

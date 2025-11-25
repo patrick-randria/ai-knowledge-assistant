@@ -10,7 +10,6 @@ langchain-openai
 langchain-text-splitters
 langchain-community
 langchain-qdrant
-langchain-huggingface
+# langchain-huggingface
 pydantic-settings
 python-multipart
-sentence-transformers
